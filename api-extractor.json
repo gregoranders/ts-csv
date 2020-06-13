@@ -23,7 +23,7 @@
 
   "docModel": {
     "enabled": true,
-    "apiJsonFilePath": "<projectFolder>/docs/index.api.json"
+    "apiJsonFilePath": "<projectFolder>/dist/index.api.json"
   },
 
   "dtsRollup": {
@@ -34,7 +34,7 @@
 
   "tsdocMetadata": {
     "enabled": true,
-    "tsdocMetadataFilePath": "<projectFolder>/docs/tsdoc-metadata.json"
+    "tsdocMetadataFilePath": "<projectFolder>/dist/tsdoc-metadata.json"
   },
 
   "newlineKind": "lf",
