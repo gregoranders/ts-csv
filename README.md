@@ -7,7 +7,8 @@
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![License][license-image]][license-url]
 [![Issues][issues-image]][issues-url]
-[![Code maintainability][code-maintainability-image]][code-maintainability-url] [![Code issues][code-issues-image]][code-issues-url] [![Code Technical Debt][code-tech-debt-image]][code-tech-debt-url]
+
+<!-- [![Code maintainability][code-maintainability-image]][code-maintainability-url] [![Code issues][code-issues-image]][code-issues-url] [![Code Technical Debt][code-tech-debt-image]][code-tech-debt-url] -->
 
 [![Main Language](https://img.shields.io/github/languages/top/gregoranders/ts-csv)][code-metric-url] [![Languages](https://img.shields.io/github/languages/count/gregoranders/ts-csv)][code-metric-url] [![Code Size](https://img.shields.io/github/languages/code-size/gregoranders/ts-csv)][code-metric-url] [![Repo-Size](https://img.shields.io/github/repo-size/gregoranders/ts-csv)][code-metric-url]
 
@@ -15,13 +16,11 @@
 
 - TypeScript
 - Jest Snapshot/Unit Tests with Code Coverage
-- GitHub CI Integration (feature, development, master, release)
-- Circle CI Integration
+- GitHub CI Integration (feature, development, master)
 - Code Quality via Code Climate
 
 |                                                                  |                                                                            |                                                                              |
 | ---------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [![Release Build][release-build-image]][release-url]             |                                                                            |                                                                              |
 | [![Master Build][master-build-image]][master-url]                | [![Master Coverage][master-coveralls-image]][master-coveralls-url]         | [![Master Version][master-version-image]][master-version-url]                |
 | [![Development Build][development-build-image]][development-url] | [![Test Coverage][development-coveralls-image]][development-coveralls-url] | [![Development Version][development-version-image]][development-version-url] |
 
