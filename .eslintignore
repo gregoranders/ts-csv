@@ -1,0 +1,10 @@
+# dist/
+docs/
+etc/
+api/
+templates/
+CODE_OF_CONDUCT.md
+README.md
+SECURITY.md
+CHANGELOG.md
+LICENSE

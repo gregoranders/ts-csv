@@ -1,0 +1,144 @@
+{
+  "name": "@gregoranders/csv",
+  "version": "0.0.0",
+  "description": "Simple CSV parser in TypeScript",
+  "scripts": {
+    "clear": "npm run prescript && npm run pretest && rimraf ./node_modules ./package-lock.json ./temp",
+    "build": "cross-env NODE_ENV=production npm run script",
+    "postbuild": "eslint src/**/* --fix --quiet",
+    "pretest": "rimraf ./test junit.xml",
+    "test": "jest --runInBand --coverage --coverageDirectory ../test/coverage --rootDir ./src",
+    "prescript": "rimraf ./dist",
+    "script": "npm run script:cjs && npm run script:esm",
+    "script:cjs": "tsc --project ./ --module commonjs --target es5 --outDir ./dist/cjs",
+    "script:esm": "tsc --project ./ --module es6 --declaration --declarationDir ./dist/esm --outDir ./dist/esm",
+    "prepare": "npm test && npm run build && npm run api-extractor && npm run api-documenter && eslint --ext .ts ./src",
+    "api-extractor": "api-extractor run --local --verbose",
+    "api-documenter": "api-documenter markdown --input ./dist --output ./docs",
+    "codeclimate": "docker run --interactive --tty --rm --env CODECLIMATE_CODE=\"$PWD\" --volume \"$PWD\":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate analyze",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version major -m \"chore(release): %s \"",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version minor -m \"chore(release): %s \"",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version patch -m \"chore(release): %s \""
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregoranders/ts-csv.git"
+  },
+  "keywords": [
+    "api-documenter",
+    "api-extractor",
+    "csv",
+    "jest",
+    "typescript"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run prepare",
+      "pre-push": "npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --ext .ts --fix --quiet"
+    ]
+  },
+  "jest-html-reporter": {
+    "pageTitle": "ts-csv",
+    "outputPath": "./test/index.html"
+  },
+  "jest-junit": {
+    "outputDirectory": "./test"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "!**/node_modules/**",
+      "!**/dist/**",
+      "!**/coverage/**",
+      "!**/results/**"
+    ],
+    "coverageReporters": [
+      "lcovonly",
+      "text",
+      "text-summary"
+    ],
+    "reporters": [
+      "jest-html-reporter",
+      "jest-spec-reporter",
+      "jest-junit"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "\\.ts$": "ts-jest"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 78,
+    "tabWidth": 2,
+    "bracketSpacing": true,
+    "useTabs": false
+  },
+  "author": "Gregor Anders <gregor.anders@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gregoranders/ts-csv/issues"
+  },
+  "homepage": "https://gregoranders.github.io/ts-csv/",
+  "devDependencies": {
+    "@microsoft/api-documenter": "7.8.12",
+    "@microsoft/api-extractor": "7.8.11",
+    "@types/jest": "26.0.0",
+    "@types/node": "14.0.13",
+    "@typescript-eslint/eslint-plugin": "3.2.0",
+    "@typescript-eslint/parser": "3.2.0",
+    "cross-env": "7.0.2",
+    "eslint": "7.2.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.4",
+    "generate-changelog": "1.8.0",
+    "husky": "4.2.5",
+    "jest": "26.0.1",
+    "jest-cli": "26.0.1",
+    "jest-html-reporter": "3.1.3",
+    "jest-junit": "10.0.0",
+    "jest-spec-reporter": "1.0.13",
+    "lint-staged": "10.2.10",
+    "prettier": "2.0.5",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.1.0",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.5"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "editor.tabSize": 2,
+  "editor.wordWrapColumn": 120,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "files.associations": { "*.json": "jsonc" }
+}

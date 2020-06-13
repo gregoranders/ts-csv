@@ -1,0 +1,48 @@
+version: '2'
+checks:
+  file-lines:
+    config:
+      threshold: 1000
+plugins:
+  editorconfig:
+    enabled: false
+  tslint:
+    enabled: false
+  eslint:
+    enabled: true
+    channel: 'eslint-6'
+    config:
+      config: .cceslintrc.js
+    extensions:
+      - .es6
+      - .js
+      - .jsx
+      - .ts
+      - .tsx
+      - .mjs
+  fixme:
+    enabled: true
+  git-legal:
+    enabled: true
+exclude_patterns:
+  - 'spec/'
+  - '!spec/support/helpers'
+  - 'dist/'
+  - 'results/'
+  - 'etc/'
+  - 'temp/'
+  - 'docs/'
+  - 'coverage/'
+  - '.circleci/'
+  - '.github/'
+  - '.vscode/'
+  - '**/node_modules/'
+  - '**/spec/'
+  - '**/test/'
+  - '**/tests/'
+  - 'Tests/'
+  - '**/vendor/'
+  - '**/*_test.go'
+  - '**/*.d.ts'
+  - '**/*.spec.ts'
+  - '**/*.xml'
