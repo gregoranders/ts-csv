@@ -14,7 +14,7 @@
     "script:esm": "tsc --project ./ --module es6 --declaration --declarationDir ./dist/esm --outDir ./dist/esm",
     "prepare": "npm test && npm run build && npm run api-extractor && npm run api-documenter && eslint --ext .ts ./src",
     "api-extractor": "api-extractor run --local --verbose",
-    "api-documenter": "api-documenter markdown --input ./dist --output ./docs",
+    "api-documenter": "api-documenter markdown --input ./dist --output ./docs-tmp",
     "codeclimate": "docker run --interactive --tty --rm --env CODECLIMATE_CODE=\"$PWD\" --volume \"$PWD\":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate analyze",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version major -m \"chore(release): %s \"",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version minor -m \"chore(release): %s \"",
