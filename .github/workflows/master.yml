@@ -36,17 +36,17 @@ jobs:
           path-to-lcov: ./test/coverage/lcov.info
         env:
           CI: true
-      - name: publish code coverage to code climate
-        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-        uses: paambaati/codeclimate-action@v2.3.0
-        env:
-          CI: true
-          CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE }}
-        with:
-          coverageCommand: npm run test
-          coverageLocations: |
-            ./test/coverage/lcov.info:lcov
-          debug: true
+      # - name: publish code coverage to code climate
+      #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+      #   uses: paambaati/codeclimate-action@v2.3.0
+      #   env:
+      #     CI: true
+      #     CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE }}
+      #   with:
+      #     coverageCommand: npm run test
+      #     coverageLocations: |
+      #       ./test/coverage/lcov.info:lcov
+      #     debug: true
       # - name: create release
       #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
       #   id: createrelease
