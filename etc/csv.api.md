@@ -21,7 +21,7 @@ export const libname = "@gregoranders/csv";
 export const liburl = "https://gregoranders.github.io/ts-csv/";
 
 // @public
-export const libversion = "0.0.1";
+export const libversion = "0.0.2";
 
 // @public
 class Parser<T = Record<string, string>> {
