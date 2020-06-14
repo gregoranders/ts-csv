@@ -2,7 +2,7 @@
 
 ## Simple CSV parser in [TypeScript](http://www.typescriptlang.org/)
 
-## [API Docs](./api/index.md)
+## [API Docs](./docs/index.md)
 
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![License][license-image]][license-url]
