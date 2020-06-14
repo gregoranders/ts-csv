@@ -17,7 +17,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
     });
 
     it('libversion', () => {
-      expect(TestSubject.libversion).toBe('0.0.2');
+      expect(TestSubject.libversion).toBe('0.0.3');
     });
 
     it('liburl', () => {
@@ -122,12 +122,12 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       ].map(({ text, expected }) => {
         it(`${text.replace(/\n/g, '<NL>')} => ParseError(${expected[0]}, ${
           expected[1]
-          })`, () => {
-            const parser = new TestSubject.Parser();
-            expect(() => parser.parse(text)).toThrowError(
-              `Invalid CSV at ${expected[0]}:${expected[1]}`,
-            );
-          });
+        })`, () => {
+          const parser = new TestSubject.Parser();
+          expect(() => parser.parse(text)).toThrowError(
+            `Invalid CSV at ${expected[0]}:${expected[1]}`,
+          );
+        });
       });
     });
   });
@@ -186,12 +186,12 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       ].map(({ text, expected }) => {
         it(`${text.replace(/\n/g, '<NL>')} => ParseError(${expected[0]}, ${
           expected[1]
-          })`, () => {
-            const parser = new TestSubject.Parser({ fieldSeparator: ';' });
-            expect(() => parser.parse(text)).toThrowError(
-              `Invalid CSV at ${expected[0]}:${expected[1]}`,
-            );
-          });
+        })`, () => {
+          const parser = new TestSubject.Parser({ fieldSeparator: ';' });
+          expect(() => parser.parse(text)).toThrowError(
+            `Invalid CSV at ${expected[0]}:${expected[1]}`,
+          );
+        });
       });
     });
   });
