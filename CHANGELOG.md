@@ -1,3 +1,9 @@
+#### 0.0.3 (2020-06-14)
+
+##### Documentation Changes
+
+* **SECURITY:**  update ([6908d981](https://github.com/gregoranders/ts-csv/commit/6908d9811d0987b7ffbbc335b76aa07fd3765110))
+
 #### 0.0.2 (2020-06-14)
 
 ##### Chores
