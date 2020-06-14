@@ -27,7 +27,7 @@
 ## Example
 
 ```sh
-npm install --save-dev ts-csv
+npm install --save-dev @gregoranders/csv
 ```
 
 ```ts
