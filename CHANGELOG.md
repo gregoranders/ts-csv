@@ -1,3 +1,13 @@
+#### 0.0.2 (2020-06-14)
+
+##### Chores
+
+* **release:**  prepare next release ([67bcadb2](https://github.com/gregoranders/ts-csv/commit/67bcadb26479d55482df8a87cfb16d4d627d1d30))
+
+##### Documentation Changes
+
+* **README:**  add/fix badges ([9e29f518](https://github.com/gregoranders/ts-csv/commit/9e29f51829dbcbf21235f22a29c6804d7ebc0759))
+
 #### 0.0.1 (2020-06-14)
 
 ##### Chores
