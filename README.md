@@ -7,8 +7,10 @@
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![License][license-image]][license-url]
 [![Issues][issues-image]][issues-url]
+[![Code maintainability][code-maintainability-image]][code-maintainability-url] [![Code issues][code-issues-image]][code-issues-url] [![Code Technical Debt][code-tech-debt-image]][code-tech-debt-url]
 
-<!-- [![Code maintainability][code-maintainability-image]][code-maintainability-url] [![Code issues][code-issues-image]][code-issues-url] [![Code Technical Debt][code-tech-debt-image]][code-tech-debt-url] -->
+[![types][npm-types-image]][npm-types-url]
+[![node][node-image]][node-url]
 
 [![Main Language](https://img.shields.io/github/languages/top/gregoranders/ts-csv)][code-metric-url] [![Languages](https://img.shields.io/github/languages/count/gregoranders/ts-csv)][code-metric-url] [![Code Size](https://img.shields.io/github/languages/code-size/gregoranders/ts-csv)][code-metric-url] [![Repo-Size](https://img.shields.io/github/repo-size/gregoranders/ts-csv)][code-metric-url]
 
@@ -21,6 +23,7 @@
 
 |                                                                  |                                                                            |                                                                              |
 | ---------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| [![Release][release-image]][release-url]                         |                                                                            | [![npm][npm-image]][npm-url]                                                 |
 | [![Master Build][master-build-image]][master-url]                | [![Master Coverage][master-coveralls-image]][master-coveralls-url]         | [![Master Version][master-version-image]][master-version-url]                |
 | [![Development Build][development-build-image]][development-url] | [![Test Coverage][development-coveralls-image]][development-coveralls-url] | [![Development Version][development-version-image]][development-version-url] |
 
@@ -111,3 +114,11 @@ npm run clear
 [master-circleci-url]: https://app.circleci.com/pipelines/github/gregoranders/ts-csv?branch=master
 [development-circleci-image]: https://circleci.com/gh/gregoranders/ts-csv/tree/development.svg?style=shield
 [development-circleci-url]: https://app.circleci.com/pipelines/github/gregoranders/ts-csv?branch=development
+[npm-url]: https://www.npmjs.com/package/@gregoranders/csv
+[npm-image]: https://img.shields.io/npm/v/@gregoranders/csv
+[node-url]: https://www.npmjs.com/package/@gregoranders/csv
+[node-image]: https://img.shields.io/node/v/@gregoranders/csv
+[npm-types-url]: https://www.npmjs.com/package/@gregoranders/csv
+[npm-types-image]: https://img.shields.io/npm/types/@gregoranders/csv
+[release-url]: https://www.npmjs.com/package/@gregoranders/csv
+[release-image]: https://img.shields.io/github/release/gregoranders/ts-csv
