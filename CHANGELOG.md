@@ -1,3 +1,9 @@
+#### 0.0.7 (2020-06-20)
+
+##### Chores
+
+* **codeclimate:**  move cc config ([2db40082](https://github.com/gregoranders/ts-csv/commit/2db400824d7523a5f095d923a0be66c32dff086d))
+
 #### 0.0.6 (2020-06-20)
 
 ##### Build System / Dependencies
