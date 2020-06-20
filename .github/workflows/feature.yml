@@ -5,6 +5,9 @@ on:
     branches:
       - feature/*
 
+env:
+  CI: true
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -26,13 +29,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-        env:
-          CI: true
       - name: code coverage
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./test/coverage/lcov.info
-        env:
-          CI: true
