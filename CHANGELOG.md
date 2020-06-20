@@ -1,3 +1,15 @@
+#### 0.0.6 (2020-06-20)
+
+##### Build System / Dependencies
+
+* **release:**
+  *  fix publish to npm ([953def9a](https://github.com/gregoranders/ts-csv/commit/953def9a0e663643b94730792413ad285e865999))
+
+##### Chores
+
+* **release:**
+  *  0.0.6 release ([a70abd19](https://github.com/gregoranders/ts-csv/commit/a70abd192f85dc934e60e2f409da0b2d6c510259))
+
 #### 0.0.5 (2020-06-20)
 
 ##### Build System / Dependencies
