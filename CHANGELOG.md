@@ -1,3 +1,47 @@
+#### 0.0.4 (2020-06-20)
+
+##### Build System / Dependencies
+
+* **release:**  add release workflow ([0e68a0e4](https://github.com/gregoranders/ts-csv/commit/0e68a0e4da12f3ae86cd1b225b2517325d98f9c8))
+
+##### Chores
+
+* **release:**
+  *  update lib version in code ([d1dae662](https://github.com/gregoranders/ts-csv/commit/d1dae6621ab25a93850aaa8ebbaeba1417f107fd))
+  *  bump version ([b4f4ae25](https://github.com/gregoranders/ts-csv/commit/b4f4ae256b29fd27ec3e8e60c2f97d0c1607d17a))
+  *  remove file ([dfb954df](https://github.com/gregoranders/ts-csv/commit/dfb954df74bb4ef7c84a2795a67d972a2dd17719))
+* **SECURITY:**  update ([a0a78fa6](https://github.com/gregoranders/ts-csv/commit/a0a78fa6b4e29519f8c1a25b24afed9d6f9c9c4d))
+* **npm:**  remove .npmignore ([9742113e](https://github.com/gregoranders/ts-csv/commit/9742113ecb8136a1d3cbd34360043c915cb2ce05))
+* **package:**  remove tasks ([72c5be24](https://github.com/gregoranders/ts-csv/commit/72c5be2458f963b037e54d1a1ffcd6f0a7cdfc31))
+* **eslint:**  move config ([9ec51457](https://github.com/gregoranders/ts-csv/commit/9ec51457a62f9eaefd6d889026f57973fef771e3))
+
+##### Documentation Changes
+
+* **CHANGELOG:**  update changelog ([1be6a3cb](https://github.com/gregoranders/ts-csv/commit/1be6a3cbbe5d21cf9a297ad01e45d97e6c7be75d))
+* **api:**  update api docs ([ef535a35](https://github.com/gregoranders/ts-csv/commit/ef535a3596d3cc21f7bca61fea741d7adcbdf2f6))
+* **README:**  update docs ([e08b309d](https://github.com/gregoranders/ts-csv/commit/e08b309d26726a0665a16368d6f903d3a935fce0))
+
+##### Bug Fixes
+
+* **build:**  fix code quality issue ([99756f37](https://github.com/gregoranders/ts-csv/commit/99756f37f67d200ca23586c5e767237ab825a143))
+* **tsconfig:**  remove DOM ([1773dc79](https://github.com/gregoranders/ts-csv/commit/1773dc798ac9c1f8481514a7f6608b2146753596))
+
+##### Other Changes
+
+* gregoranders/ts-csv into development ([9143c2c3](https://github.com/gregoranders/ts-csv/commit/9143c2c3c9eaf04ff49a725d5e87ed451fef8b9f))
+*  bump lint-staged from 10.2.10 to 10.2.11 ([fbd4d5a8](https://github.com/gregoranders/ts-csv/commit/fbd4d5a8e8c7ae044870f47822a73ddc3b6d74b0))
+*  bump jest-spec-reporter from 1.0.13 to 1.0.14 ([dba06913](https://github.com/gregoranders/ts-csv/commit/dba06913af3e0f818ef798058e854e10f8a92e90))
+*  bump @microsoft/api-documenter from 7.8.12 to 7.8.13 ([9332c321](https://github.com/gregoranders/ts-csv/commit/9332c3211edde18c78ca88e54943f909ada6007e))
+*  bump @typescript-eslint/eslint-plugin from 3.2.0 to 3.3.0 ([c1787f9c](https://github.com/gregoranders/ts-csv/commit/c1787f9cb92661d0fe51660cdaa70b71b2d5114e))
+*  bump @typescript-eslint/parser from 3.2.0 to 3.3.0 ([56fd575a](https://github.com/gregoranders/ts-csv/commit/56fd575a97b2c295be040990c2ee043ef5136557))
+*  bump @microsoft/api-extractor from 7.8.11 to 7.8.12 ([460142f1](https://github.com/gregoranders/ts-csv/commit/460142f161d4e48f6c646f70ac9c504f5e1144d6))
+*  bump eslint-plugin-prettier from 3.1.3 to 3.1.4 ([55fbd046](https://github.com/gregoranders/ts-csv/commit/55fbd0460cce18c54f731e0f8a672bc9360041ee))
+
+##### Refactors
+
+* **index:**  make result immutable ([ae46c5d8](https://github.com/gregoranders/ts-csv/commit/ae46c5d87b0a7336617f624fdb9f086f7efbeba6))
+* **build:**  refactor workflows ([07c95115](https://github.com/gregoranders/ts-csv/commit/07c951150201720b79e7bb6b6ba0e742653fe2b4))
+
 #### 0.0.3 (2020-06-14)
 
 ##### Documentation Changes

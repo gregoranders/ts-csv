@@ -1,6 +1,6 @@
 {
   "name": "@gregoranders/csv",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple CSV parser in TypeScript",
   "scripts": {
     "clear": "npm run prescript && npm run pretest && rimraf ./node_modules ./package-lock.json ./temp",
@@ -12,13 +12,10 @@
     "script": "npm run script:cjs && npm run script:esm",
     "script:cjs": "tsc --project ./ --module commonjs --target es5 --outDir ./dist/cjs",
     "script:esm": "tsc --project ./ --module es6 --declaration --declarationDir ./dist/esm --outDir ./dist/esm",
-    "prepare": "npm test && npm run build && npm run api-extractor && npm run api-documenter && eslint --ext .ts ./src",
+    "prepare": "npm test && npm run build && npm run api-extractor && npm run api-documenter && eslint --ext .ts ./src && rimraf ./build/esm/index.d.ts",
     "api-extractor": "api-extractor run --local --verbose",
     "api-documenter": "api-documenter markdown --input ./dist --output ./docs-tmp && cpx 'docs-tmp/**/*.*' docs",
-    "codeclimate": "docker run --interactive --tty --rm --env CODECLIMATE_CODE=\"$PWD\" --volume \"$PWD\":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate analyze",
-    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version major -m \"chore(release): %s \"",
-    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version minor -m \"chore(release): %s \"",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'chore(changelog): CHANGELOG.md' && npm version patch -m \"chore(release): %s \""
+    "codeclimate": "docker run --interactive --tty --rm --env CODECLIMATE_CODE=\"$PWD\" --volume \"$PWD\":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate analyze"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -41,6 +38,24 @@
     "jest",
     "typescript"
   ],
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+      }
+    },
+    "rules": {},
+    "settings": {}
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && npm run prepare",
@@ -115,17 +130,17 @@
   },
   "homepage": "https://gregoranders.github.io/ts-csv/",
   "devDependencies": {
-    "@microsoft/api-documenter": "7.8.12",
-    "@microsoft/api-extractor": "7.8.11",
+    "@microsoft/api-documenter": "7.8.13",
+    "@microsoft/api-extractor": "7.8.12",
     "@types/jest": "26.0.0",
     "@types/node": "14.0.13",
-    "@typescript-eslint/eslint-plugin": "3.2.0",
-    "@typescript-eslint/parser": "3.2.0",
+    "@typescript-eslint/eslint-plugin": "3.3.0",
+    "@typescript-eslint/parser": "3.3.0",
     "cpx": "1.5.0",
     "cross-env": "7.0.2",
     "eslint": "7.2.0",
     "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "4.0.4",
     "generate-changelog": "1.8.0",
@@ -134,8 +149,8 @@
     "jest-cli": "26.0.1",
     "jest-html-reporter": "3.1.3",
     "jest-junit": "10.0.0",
-    "jest-spec-reporter": "1.0.13",
-    "lint-staged": "10.2.10",
+    "jest-spec-reporter": "1.0.14",
+    "lint-staged": "10.2.11",
     "prettier": "2.0.5",
     "rimraf": "3.0.2",
     "ts-jest": "26.1.0",

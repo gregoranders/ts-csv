@@ -19,9 +19,7 @@ export declare class Parser<T = Record<string, string>>
 import Parser from '@gregoranders/csv';
 
 const parser = new Parser();
-const rows = parser.parse('a,b,c\n1,2,3');
-
-console.log(rows);
+const rows = parser.parse('a,b,c\n1,2,3\n4,5,6');
 
 ```
 

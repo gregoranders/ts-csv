@@ -1,6 +1,6 @@
 # @gregoranders/csv
 
-## Simple CSV parser in [TypeScript](http://www.typescriptlang.org/)
+## Simple CSV parser in [TypeScript][typescript-url]
 
 ## [API Docs](./docs/index.md)
 
@@ -12,13 +12,14 @@
 [![types][npm-types-image]][npm-types-url]
 [![node][node-image]][node-url]
 
-[![Main Language](https://img.shields.io/github/languages/top/gregoranders/ts-csv)][code-metric-url] [![Languages](https://img.shields.io/github/languages/count/gregoranders/ts-csv)][code-metric-url] [![Code Size](https://img.shields.io/github/languages/code-size/gregoranders/ts-csv)][code-metric-url] [![Repo-Size](https://img.shields.io/github/repo-size/gregoranders/ts-csv)][code-metric-url]
+[![Main Language][language-image]][code-metric-url] [![Languages][languages-image]][code-metric-url] [![Code Size][code-size-image]][code-metric-url] [![Repo-Size][repo-size-image]][code-metric-url]
 
 ## Features
 
-- TypeScript
-- Jest Snapshot/Unit Tests with Code Coverage
-- GitHub CI Integration (feature, development, master)
+- [TypeScript][typescript-url]
+- [Jest][jest-url] Unit Tests with Code Coverage
+- GitHub CI Integration (feature, development, master, release)
+- Publish via CI
 - Code Quality via Code Climate
 
 |                                                                  |                                                                            |                                                                              |
@@ -30,16 +31,72 @@
 ## Example
 
 ```sh
-npm install --save-dev @gregoranders/csv
+npm install @gregoranders/csv
 ```
 
 ```ts
 import Parser from '@gregoranders/csv';
 
 const parser = new Parser();
-const rows = parser.parse('a,b,c\n1,2,3');
+const rows = parser.parse('a,b,c\n1,2,3\n4,5,6');
+```
+```ts
+console.log(JSON.stringify(rows, null, 2));
 
-console.log(rows);
+[
+  [
+    "a",
+    "b",
+    "c"
+  ],
+  [
+    "1",
+    "2",
+    "3"
+  ],
+  [
+    "4",
+    "5",
+    "6"
+  ]
+]
+```
+```ts
+console.log(JSON.stringify(parser.rows, null, 2));
+
+[
+  [
+    "a",
+    "b",
+    "c"
+  ],
+  [
+    "1",
+    "2",
+    "3"
+  ],
+  [
+    "4",
+    "5",
+    "6"
+  ]
+]
+```
+```ts
+console.log(JSON.stringify(parser.json, null, 2));
+
+[
+  {
+    "a": "1",
+    "b": "2",
+    "c": "3"
+  },
+  {
+    "a": "4",
+    "b": "5",
+    "c": "6"
+  }
+]
 ```
 
 ### Clone repository
@@ -62,8 +119,7 @@ npm run build
 
 ### Testing
 
-#### Test using [Jest](https://jestjs.io/)
-
+#### Test using [Jest][jest-url]
 ```
 npm test
 ```
@@ -122,3 +178,9 @@ npm run clear
 [npm-types-image]: https://img.shields.io/npm/types/@gregoranders/csv
 [release-url]: https://www.npmjs.com/package/@gregoranders/csv
 [release-image]: https://img.shields.io/github/release/gregoranders/ts-csv
+[language-image]: https://img.shields.io/github/languages/top/gregoranders/ts-csv
+[languages-image]: https://img.shields.io/github/languages/count/gregoranders/ts-csv
+[code-size-image]: https://img.shields.io/github/languages/code-size/gregoranders/ts-csv
+[repo-size-image]: https://img.shields.io/github/repo-size/gregoranders/ts-csv
+[typescript-url]: http://www.typescriptlang.org/
+[jest-url]: https://jestjs.io

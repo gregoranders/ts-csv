@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+env:
+  CI: true
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -26,37 +30,30 @@ jobs:
       - name: npm install
         run: |
           npm install
-        env:
-          CI: true
       - name: code coverage
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./test/coverage/lcov.info
+      - name: publish code coverage to code climate
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+        uses: paambaati/codeclimate-action@v2.6.0
         env:
-          CI: true
-      # - name: publish code coverage to code climate
-      #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-      #   uses: paambaati/codeclimate-action@v2.3.0
-      #   env:
-      #     CI: true
-      #     CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE }}
-      #   with:
-      #     coverageCommand: npm run test
-      #     coverageLocations: |
-      #       ./test/coverage/lcov.info:lcov
-      #     debug: true
-      # - name: create release
-      #   if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-      #   id: createrelease
-      #   uses: gregoranders/nodejs-create-release@v0.0.6
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     PACKAGE_JSON: ${{ steps.projectinfo.outputs.context }}
-      #   with:
-      #     tag: v${{ steps.projectinfo.outputs.version }}
-      #     name: ${{ steps.projectinfo.outputs.version }} Release
-      #     body: ${{ steps.projectinfo.outputs.name }} - ${{ steps.projectinfo.outputs.version }} Release
-      #     target: ${{ github.ref }}
-      #     draft: true
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: npm run test
+          coverageLocations: |
+            ./test/coverage/lcov.info:lcov
+      - name: create release
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
+        id: createrelease
+        uses: gregoranders/nodejs-create-release@v0.0.6
+        env:
+          PACKAGE_JSON: ${{ steps.projectinfo.outputs.context }}
+        with:
+          tag: v${{ steps.projectinfo.outputs.version }}
+          name: ${{ steps.projectinfo.outputs.version }} Release
+          body: ${{ steps.projectinfo.outputs.name }} - ${{ steps.projectinfo.outputs.version }} Release
+          target: ${{ github.ref }}
+          draft: true
