@@ -31,7 +31,7 @@
 ## Example
 
 ```sh
-npm install --save-dev @gregoranders/csv
+npm install @gregoranders/csv
 ```
 
 ```ts
@@ -39,7 +39,8 @@ import Parser from '@gregoranders/csv';
 
 const parser = new Parser();
 const rows = parser.parse('a,b,c\n1,2,3\n4,5,6');
-
+```
+```ts
 console.log(JSON.stringify(rows, null, 2));
 
 [
@@ -59,7 +60,8 @@ console.log(JSON.stringify(rows, null, 2));
     "6"
   ]
 ]
-
+```
+```ts
 console.log(JSON.stringify(parser.rows, null, 2));
 
 [
@@ -79,7 +81,8 @@ console.log(JSON.stringify(parser.rows, null, 2));
     "6"
   ]
 ]
-
+```
+```ts
 console.log(JSON.stringify(parser.json, null, 2));
 
 [
