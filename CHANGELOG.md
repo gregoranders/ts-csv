@@ -17,11 +17,13 @@
 
 ##### Documentation Changes
 
+* **CHANGELOG:**  update changelog ([1be6a3cb](https://github.com/gregoranders/ts-csv/commit/1be6a3cbbe5d21cf9a297ad01e45d97e6c7be75d))
 * **api:**  update api docs ([ef535a35](https://github.com/gregoranders/ts-csv/commit/ef535a3596d3cc21f7bca61fea741d7adcbdf2f6))
 * **README:**  update docs ([e08b309d](https://github.com/gregoranders/ts-csv/commit/e08b309d26726a0665a16368d6f903d3a935fce0))
 
 ##### Bug Fixes
 
+* **build:**  fix code quality issue ([99756f37](https://github.com/gregoranders/ts-csv/commit/99756f37f67d200ca23586c5e767237ab825a143))
 * **tsconfig:**  remove DOM ([1773dc79](https://github.com/gregoranders/ts-csv/commit/1773dc798ac9c1f8481514a7f6608b2146753596))
 
 ##### Other Changes
