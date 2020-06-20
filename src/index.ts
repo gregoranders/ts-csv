@@ -107,10 +107,10 @@ const ParseError = (line: number, column: number) =>
  * import Parser from '@gregoranders/csv';
  *
  * const parser = new Parser();
- * const rows = parser.parse('a,b,c\n1,2,3');
- *
- * console.log(rows);
+ * const rows = parser.parse('a,b,c\n1,2,3\n4,5,6');
  * ```
+ *
+ * @typeParam T - the type returned by {@link Parser#json}
  * @public
  */
 export class Parser<T = Record<string, string>> {
@@ -148,6 +148,7 @@ export class Parser<T = Record<string, string>> {
    * @returns an array of {@link Row}s
    *
    * @throws Error on parse error
+   * @readonly
    */
   public parse(text: string): readonly Row[] {
     this._rows = [];
@@ -175,22 +176,33 @@ export class Parser<T = Record<string, string>> {
       throw ParseError(this._quoteState.line, this._quoteState.lineOffset);
     }
 
-    return this.rows;
+    this.rows.forEach((row) => {
+      row.forEach((value) => Object.freeze(value))
+      Object.freeze(row);
+    });
+
+    Object.freeze(this._rows);
+
+    return this._rows;
   }
 
   /**
    * returns rows
    *
    * @returns an array of {@link Row}s
+   * @readonly
+   * @virtual
    */
   public get rows(): readonly Row[] {
-    return Object.freeze(this._rows);
+    return this._rows;
   }
 
   /**
    * returns rows as JSON using the first row as property name provider
    *
    * @returns an array of {@link Row}s as JSON
+   * @readonly
+   * @virtual
    */
   public get json(): readonly T[] {
     if (this.rows.length) {
@@ -213,7 +225,7 @@ export class Parser<T = Record<string, string>> {
       );
     }
 
-    return [];
+    return Object.freeze([]);
   }
 
   private handleNext() {

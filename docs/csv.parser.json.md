@@ -9,5 +9,6 @@ returns rows as JSON using the first row as property name provider
 <b>Signature:</b>
 
 ```typescript
+/** @virtual */
 get json(): readonly T[];
 ```

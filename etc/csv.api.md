@@ -26,8 +26,10 @@ export const libversion = "0.0.3";
 // @public
 class Parser<T = Record<string, string>> {
     constructor(configuration?: Configuration);
+    // @virtual
     get json(): readonly T[];
     parse(text: string): readonly Row[];
+    // @virtual
     get rows(): readonly Row[];
     }
 

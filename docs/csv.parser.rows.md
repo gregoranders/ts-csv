@@ -9,5 +9,6 @@ returns rows
 <b>Signature:</b>
 
 ```typescript
+/** @virtual */
 get rows(): readonly Row[];
 ```

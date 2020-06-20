@@ -195,4 +195,84 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       });
     });
   });
+
+  describe(`returned value is immutable`, () => {
+    it('parse should return immutable value', () => {
+      const testSubject = new TestSubject.Parser();
+      const rows = testSubject.parse('1,2,3\n,b,c');
+
+      const wrows = (rows as unknown) as Array<string[]>;
+      expect.assertions(3)
+
+      try {
+        wrows.push(['test']);
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError('Cannot add property 2, object is not extensible'));
+      }
+
+      try {
+        wrows[0].push('test');
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError('Cannot add property 3, object is not extensible'));
+      }
+
+      try {
+        wrows[0][0] = 'test';
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError(`Cannot assign to read only property '0' of object '[object Array]'`));
+      }
+    });
+
+    it('rows should return immutable value', () => {
+      const testSubject = new TestSubject.Parser();
+      testSubject.parse('1,2,3\n,b,c');
+
+      const wrows = (testSubject.rows as unknown) as Array<string[]>;
+      expect.assertions(3)
+
+      try {
+        wrows.push(['test']);
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError('Cannot add property 2, object is not extensible'));
+      }
+
+      try {
+        wrows[0].push('test');
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError('Cannot add property 3, object is not extensible'));
+      }
+
+      try {
+        wrows[0][0] = 'test';
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError(`Cannot assign to read only property '0' of object '[object Array]'`));
+      }
+    });
+
+    it('json should return immutable value', () => {
+      const testSubject = new TestSubject.Parser();
+      testSubject.parse('1,2,3\n,b,c');
+
+      const wrows = (testSubject.json as unknown) as Array<Record<string, string>>;
+      expect.assertions(3)
+
+      try {
+        wrows.push({'test': 'test'});
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError('Cannot add property 1, object is not extensible'));
+      }
+
+      try {
+        wrows.push({'test': 'test'});
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError('Cannot add property 1, object is not extensible'));
+      }
+
+      try {
+        wrows[0]['1'] = 'test';
+      } catch (error) {
+        expect(error).toStrictEqual(TypeError(`Cannot assign to read only property '1' of object '#<Object>'`));
+      }
+    });
+  });
 });
