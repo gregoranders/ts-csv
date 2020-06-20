@@ -176,12 +176,7 @@ export class Parser<T = Record<string, string>> {
       throw ParseError(this._quoteState.line, this._quoteState.lineOffset);
     }
 
-    this.rows.forEach((row) => {
-      row.forEach((value) => Object.freeze(value))
-      Object.freeze(row);
-    });
-
-    Object.freeze(this._rows);
+    this.makeImmutable();
 
     return this._rows;
   }
@@ -324,6 +319,14 @@ export class Parser<T = Record<string, string>> {
     state.line++;
     state.lineOffset = -1;
     state.appendRow = false;
+  }
+
+  private makeImmutable() {
+    this.rows.forEach((row) => {
+      row.forEach((value) => Object.freeze(value))
+      Object.freeze(row);
+    });
+    Object.freeze(this._rows);
   }
 }
 
