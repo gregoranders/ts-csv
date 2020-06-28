@@ -96,15 +96,6 @@
       "\\.ts$": "ts-jest"
     }
   },
-  "prettier": {
-    "semi": true,
-    "trailingComma": "all",
-    "singleQuote": true,
-    "printWidth": 78,
-    "tabWidth": 2,
-    "bracketSpacing": true,
-    "useTabs": false
-  },
   "author": "Gregor Anders <gregor.anders@gmail.com>",
   "license": "MIT",
   "bugs": {
