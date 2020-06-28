@@ -7,7 +7,6 @@ on:
 
 env:
   CI: true
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -27,7 +26,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
       - name: nodejs project information
         id: projectinfo
-        uses: gregoranders/nodejs-project-info@v0.0.6
+        uses: gregoranders/nodejs-project-info@master
       - name: npm install
         run: |
           npm install
