@@ -154,14 +154,7 @@ export class Parser<T = Record<string, string>> {
    * @readonly
    */
   public parse(text: string): readonly Row[] {
-    this._rows = [];
-    this._row = [];
-    this._cell = '';
-    this._state = { ...CSV_INITAL_STATE };
-    this._index = 0;
-    this._current = '';
-    this._previous = '';
-    this._quoteState = { ...CSV_INITAL_STATE };
+    this.reset();
 
     for (this._index = 0; this._index < text.length; this._index++) {
       this._state.appendCell = true;
@@ -333,6 +326,17 @@ export class Parser<T = Record<string, string>> {
       Object.freeze(row);
     });
     Object.freeze(this._rows);
+  }
+
+  private reset() {
+    this._rows = [];
+    this._row = [];
+    this._cell = '';
+    this._state = { ...CSV_INITAL_STATE };
+    this._index = 0;
+    this._current = '';
+    this._previous = '';
+    this._quoteState = { ...CSV_INITAL_STATE };
   }
 }
 
