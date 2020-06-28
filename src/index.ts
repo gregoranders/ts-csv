@@ -18,7 +18,7 @@ export const libname = '@gregoranders/csv';
  * @public
  * @readonly
  */
-export const libversion = '0.0.7';
+export const libversion = '0.0.8';
 
 /**
  * library homepage
@@ -96,8 +96,11 @@ const CSV_INITAL_STATE = {
   appendRow: false,
 } as State;
 
-const ParseError = (line: number, column: number) =>
-  new Error(`Invalid CSV at ${line}:${column}`);
+class ParseError extends Error {
+  public constructor(line: number, column: number) {
+    super(`Invalid CSV at ${line}:${column}`);
+  }
+}
 
 /**
  * csv parser
@@ -151,14 +154,7 @@ export class Parser<T = Record<string, string>> {
    * @readonly
    */
   public parse(text: string): readonly Row[] {
-    this._rows = [];
-    this._row = [];
-    this._cell = '';
-    this._state = { ...CSV_INITAL_STATE };
-    this._index = 0;
-    this._current = '';
-    this._previous = '';
-    this._quoteState = { ...CSV_INITAL_STATE };
+    this.reset();
 
     for (this._index = 0; this._index < text.length; this._index++) {
       this._state.appendCell = true;
@@ -167,13 +163,16 @@ export class Parser<T = Record<string, string>> {
       this.handleNext();
     }
 
-    if (this._row.length) {
+    if (this._row.length > 0) {
       this.addField(this.fieldValue(this._cell), this._row, this._state);
       this.addRow(this._row, this._rows, this._state);
     }
 
     if (this._state.quoted) {
-      throw ParseError(this._quoteState.line, this._quoteState.lineOffset);
+      throw new ParseError(
+        this._quoteState.line,
+        this._quoteState.lineOffset,
+      );
     }
 
     this.makeImmutable();
@@ -200,7 +199,7 @@ export class Parser<T = Record<string, string>> {
    * @virtual
    */
   public get json(): readonly T[] {
-    if (this.rows.length) {
+    if (this.rows.length > 0) {
       const keys = this.rows[0].filter(
         (field) => typeof field === 'string',
       ) as string[];
@@ -210,12 +209,12 @@ export class Parser<T = Record<string, string>> {
           .filter((row, idx) => row && idx > 0)
           .map((row) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const obj = {} as any;
+            const object = {} as any;
             keys.forEach((key, keyIdx) => {
-              obj[key] = row[keyIdx];
+              object[key] = row[keyIdx];
             });
 
-            return Object.freeze(obj);
+            return Object.freeze(object);
           }),
       );
     }
@@ -244,14 +243,14 @@ export class Parser<T = Record<string, string>> {
   }
 
   private handleQuoteEscaped() {
-    this._cell = this._cell.substr(0, this._cell.length - 1);
+    this._cell = this._cell.slice(0, Math.max(0, this._cell.length - 1));
   }
 
   private handleQuoteNotEscaped() {
-    if (!this._cell.length || this._state.quoted) {
+    if (this._cell.length === 0 || this._state.quoted) {
       this._state.quoted = !this._state.quoted;
     } else {
-      throw ParseError(this._state.line, this._state.lineOffset);
+      throw new ParseError(this._state.line, this._state.lineOffset);
     }
     this._state.appendCell = false;
   }
@@ -323,10 +322,21 @@ export class Parser<T = Record<string, string>> {
 
   private makeImmutable() {
     this.rows.forEach((row) => {
-      row.forEach((value) => Object.freeze(value))
+      row.forEach((value) => Object.freeze(value));
       Object.freeze(row);
     });
     Object.freeze(this._rows);
+  }
+
+  private reset() {
+    this._rows = [];
+    this._row = [];
+    this._cell = '';
+    this._state = { ...CSV_INITAL_STATE };
+    this._index = 0;
+    this._current = '';
+    this._previous = '';
+    this._quoteState = { ...CSV_INITAL_STATE };
   }
 }
 

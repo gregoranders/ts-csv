@@ -1,3 +1,5 @@
+# [<img src="./typescript.svg" />][typescript-url]
+
 # @gregoranders/csv
 
 ## Simple CSV parser in [TypeScript][typescript-url]
