@@ -1,13 +1,13 @@
-import * as TestSubject from './index';
+import * as TestSubject from '.';
 
 const toJson = (keys: string[], row: string[]) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const obj = {} as any;
+  const object = {} as any;
   keys.forEach((key, keyIdx) => {
-    obj[key] = row[keyIdx];
+    object[key] = row[keyIdx];
   });
 
-  return obj;
+  return object;
 };
 
 describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
@@ -96,7 +96,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           const parser = new TestSubject.Parser();
           expect(parser.parse(text)).toStrictEqual(expected);
           expect(parser.rows).toStrictEqual(expected);
-          if (expected.length) {
+          if (expected.length > 0) {
             expect(parser.json).toEqual([toJson(expected[0], expected[1])]);
           } else {
             expect(parser.json).toEqual([]);
@@ -168,7 +168,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           });
           expect(parser.parse(text)).toStrictEqual(expected);
           expect(parser.rows).toStrictEqual(expected);
-          if (expected.length) {
+          if (expected.length > 0) {
             expect(parser.json).toEqual([toJson(expected[0], expected[1])]);
           } else {
             expect(parser.json).toEqual([]);
@@ -202,25 +202,27 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       const rows = testSubject.parse('1,2,3\n,b,c');
 
       const wrows = (rows as unknown) as Array<string[]>;
-      expect.assertions(3)
+      expect.assertions(3);
 
-      try {
+      expect(() => {
         wrows.push(['test']);
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError('Cannot add property 2, object is not extensible'));
-      }
+      }).toThrow(
+        TypeError('Cannot add property 2, object is not extensible'),
+      );
 
-      try {
+      expect(() => {
         wrows[0].push('test');
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError('Cannot add property 3, object is not extensible'));
-      }
+      }).toThrow(
+        TypeError('Cannot add property 3, object is not extensible'),
+      );
 
-      try {
+      expect(() => {
         wrows[0][0] = 'test';
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError(`Cannot assign to read only property '0' of object '[object Array]'`));
-      }
+      }).toThrow(
+        TypeError(
+          `Cannot assign to read only property '0' of object '[object Array]'`,
+        ),
+      );
     });
 
     it('rows should return immutable value', () => {
@@ -228,51 +230,51 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       testSubject.parse('1,2,3\n,b,c');
 
       const wrows = (testSubject.rows as unknown) as Array<string[]>;
-      expect.assertions(3)
+      expect.assertions(3);
 
-      try {
+      expect(() => {
         wrows.push(['test']);
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError('Cannot add property 2, object is not extensible'));
-      }
+      }).toThrow(
+        TypeError('Cannot add property 2, object is not extensible'),
+      );
 
-      try {
+      expect(() => {
         wrows[0].push('test');
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError('Cannot add property 3, object is not extensible'));
-      }
+      }).toThrow(
+        TypeError('Cannot add property 3, object is not extensible'),
+      );
 
-      try {
+      expect(() => {
         wrows[0][0] = 'test';
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError(`Cannot assign to read only property '0' of object '[object Array]'`));
-      }
+      }).toThrow(
+        TypeError(
+          `Cannot assign to read only property '0' of object '[object Array]'`,
+        ),
+      );
     });
 
     it('json should return immutable value', () => {
       const testSubject = new TestSubject.Parser();
       testSubject.parse('1,2,3\n,b,c');
 
-      const wrows = (testSubject.json as unknown) as Array<Record<string, string>>;
-      expect.assertions(3)
+      const wrows = (testSubject.json as unknown) as Array<
+        Record<string, string>
+      >;
+      expect.assertions(2);
 
-      try {
-        wrows.push({'test': 'test'});
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError('Cannot add property 1, object is not extensible'));
-      }
+      expect(() => {
+        wrows.push({ test: 'test' });
+      }).toThrow(
+        TypeError('Cannot add property 1, object is not extensible'),
+      );
 
-      try {
-        wrows.push({'test': 'test'});
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError('Cannot add property 1, object is not extensible'));
-      }
-
-      try {
+      expect(() => {
         wrows[0]['1'] = 'test';
-      } catch (error) {
-        expect(error).toStrictEqual(TypeError(`Cannot assign to read only property '1' of object '#<Object>'`));
-      }
+      }).toThrow(
+        TypeError(
+          `Cannot assign to read only property '1' of object '#<Object>'`,
+        ),
+      );
     });
   });
 });
