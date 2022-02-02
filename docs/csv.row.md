@@ -11,3 +11,5 @@ csv row
 ```typescript
 export declare type Row = Array<Field>;
 ```
+<b>References:</b> [Field](./csv.field.md)
+

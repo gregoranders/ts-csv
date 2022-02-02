@@ -1,11 +1,12 @@
+/* eslint-disable jest/no-conditional-expect */
 import * as TestSubject from '.';
 
 const toJson = (keys: string[], row: string[]) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const object = {} as any;
-  keys.forEach((key, keyIdx) => {
-    object[key] = row[keyIdx];
-  });
+  for (const [keyIndex, key] of keys.entries()) {
+    object[key] = row[keyIndex];
+  }
 
   return object;
 };
@@ -201,7 +202,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       const testSubject = new TestSubject.Parser();
       const rows = testSubject.parse('1,2,3\n,b,c');
 
-      const wrows = (rows as unknown) as Array<string[]>;
+      const wrows = rows as unknown as Array<string[]>;
       expect.assertions(3);
 
       expect(() => {
@@ -229,7 +230,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       const testSubject = new TestSubject.Parser();
       testSubject.parse('1,2,3\n,b,c');
 
-      const wrows = (testSubject.rows as unknown) as Array<string[]>;
+      const wrows = testSubject.rows as unknown as Array<string[]>;
       expect.assertions(3);
 
       expect(() => {
@@ -257,7 +258,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
       const testSubject = new TestSubject.Parser();
       testSubject.parse('1,2,3\n,b,c');
 
-      const wrows = (testSubject.json as unknown) as Array<
+      const wrows = testSubject.json as unknown as Array<
         Record<string, string>
       >;
       expect.assertions(2);

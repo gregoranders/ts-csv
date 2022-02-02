@@ -206,14 +206,14 @@ export class Parser<T = Record<string, string>> {
 
       return Object.freeze(
         this.rows
-          .filter((row, idx) => row && idx > 0)
+          .filter((row, index) => row && index > 0)
           .map((row) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const object = {} as any;
-            keys.forEach((key, keyIdx) => {
-              object[key] = row[keyIdx];
+            // eslint-disable-next-line unicorn/no-array-for-each
+            keys.forEach((key, keyIndex) => {
+              object[key] = row[keyIndex];
             });
-
             return Object.freeze(object);
           }),
       );
@@ -321,10 +321,10 @@ export class Parser<T = Record<string, string>> {
   }
 
   private makeImmutable() {
-    this.rows.forEach((row) => {
-      row.forEach((value) => Object.freeze(value));
+    for (const row of this.rows) {
+      for (const value of row) Object.freeze(value);
       Object.freeze(row);
-    });
+    }
     Object.freeze(this._rows);
   }
 
