@@ -7,6 +7,10 @@ on:
 
 env:
   CI: true
+  GITHUB_BRANCH: ${{ github.ref }}
+  GITHUB_HEAD_REF: ${{ github.head_ref }}
+  GITHUB_BASE_REF: ${{ github.base_ref }}
+  GITHUB_COMMIT: ${{ github.sha }}
 
 jobs:
   build:
@@ -15,7 +19,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        node-version: [12.x, 16.x, 17.x]
+        node-version: [12.x, 13.x, 14.x, 16.x, 17.x]
 
     steps:
       - uses: actions/checkout@v2
