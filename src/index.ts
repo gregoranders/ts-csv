@@ -18,7 +18,7 @@ export const libname = '@gregoranders/csv';
  * @public
  * @readonly
  */
-export const libversion = '0.0.9';
+export const libversion = '0.0.10';
 
 /**
  * library homepage

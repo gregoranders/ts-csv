@@ -1,6 +1,6 @@
 {
   "name": "@gregoranders/csv",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Simple CSV parser in TypeScript",
   "scripts": {
     "clear": "rimraf ./node_modules ./dist ./test ./package-lock.json ./temp ./docs-tmp",
