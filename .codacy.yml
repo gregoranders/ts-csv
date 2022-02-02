@@ -1,0 +1,24 @@
+---
+engines:
+  duplication:
+    exclude_paths:
+      - config/engines.yml
+  metric:
+    exclude_paths:
+      - config/engines.yml
+  remark-int:
+    exclude_paths:
+      - config/engines.yml
+  coverage:
+    exclude_paths:
+      - config/engines.yml
+exclude_paths:
+  - '.circleci/**'
+  - '.github/**'
+  - '.vscode/**'
+  - 'src/index.ts'
+  - 'src/fixtures/**'
+  - 'src/*.spec.*'
+  - '**.json'
+  - '**.yml'
+  - '**.md'
