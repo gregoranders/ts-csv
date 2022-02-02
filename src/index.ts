@@ -321,10 +321,12 @@ export class Parser<T = Record<string, string>> {
   }
 
   private makeImmutable() {
-    for (const row of this.rows) {
-      for (const value of row) Object.freeze(value);
+    // eslint-disable-next-line unicorn/no-array-for-each
+    this.rows.forEach((row) => {
+      // eslint-disable-next-line unicorn/no-array-for-each
+      row.forEach((value) => Object.freeze(value));
       Object.freeze(row);
-    }
+    });
     Object.freeze(this._rows);
   }
 
