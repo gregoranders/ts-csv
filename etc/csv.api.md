@@ -21,7 +21,7 @@ export const libname = "@gregoranders/csv";
 export const liburl = "https://gregoranders.github.io/ts-csv/";
 
 // @public
-export const libversion = "0.0.8";
+export const libversion = "0.0.9";
 
 // @public
 class Parser<T = Record<string, string>> {
@@ -31,14 +31,11 @@ class Parser<T = Record<string, string>> {
     parse(text: string): readonly Row[];
     // @virtual
     get rows(): readonly Row[];
-    }
-
+}
 export { Parser }
-
 export default Parser;
 
 // @public
 export type Row = Array<Field>;
-
 
 ```
