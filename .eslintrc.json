@@ -3,11 +3,9 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["prettier", "jest", "unicorn", "@typescript-eslint"],
   "extends": [
-    "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
     "plugin:unicorn/recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -22,7 +20,6 @@
   },
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "createElement" }],
     "sort-imports": [
       "error",
       {

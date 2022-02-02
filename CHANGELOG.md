@@ -1,3 +1,50 @@
+#### 0.0.9 (2022-02-02)
+
+##### Chores
+
+* **dev dependencies:**  :arrow_up: updates dependencies ([cd464fe2](https://github.com/gregoranders/ts-csv/commit/cd464fe2cd7fbbfbee611839037124b2f1f3cfdb))
+* **dependencies:**
+  *  update dependencies ([cf1d9dcc](https://github.com/gregoranders/ts-csv/commit/cf1d9dcc8af8ae822d6b97948d0a8d27052b5cc0))
+  *  update dev dependencies ([e6a6b9fb](https://github.com/gregoranders/ts-csv/commit/e6a6b9fbe52c3fbc54607733eb64bd89caaaadfa))
+* **dependecies:**  update dev dependencies ([2451ec3a](https://github.com/gregoranders/ts-csv/commit/2451ec3abdb5b55837803971a0f8b541dc797741))
+
+##### Continuous Integration
+
+* **workflows:**
+  *  :bug: removes node 10.x ([d36094b4](https://github.com/gregoranders/ts-csv/commit/d36094b498c5485bdd5a154cbc528c9df373409d))
+  *  :bug: removes node 15.x ([29907820](https://github.com/gregoranders/ts-csv/commit/299078205dd8c2c5bf21ad7ab5bd47dff099a3a7))
+  *  :construction_worker: test previous node versions ([7bc68779](https://github.com/gregoranders/ts-csv/commit/7bc687790fc7edc0061a456e64fe52d0cba5be8f))
+  *  :construction_worker: refactors GitHub workflows ([8c82a593](https://github.com/gregoranders/ts-csv/commit/8c82a593694b321bc21a7acafa28fbf0e9095833))
+* **dev dependencies:**  :bug: runs ci on node 12, 16 and 17 ([cb47be59](https://github.com/gregoranders/ts-csv/commit/cb47be59398212f1a4e1d82a174fad3616d0c6bb))
+
+##### Documentation Changes
+
+* **docs:**  :arrow_up: bumps version ([a8c21802](https://github.com/gregoranders/ts-csv/commit/a8c218027672c0c4c9433776b6e140ebfd2fd9bb))
+
+##### Bug Fixes
+
+* **script:**  :bug: fixes copy and paste issue ([f296579a](https://github.com/gregoranders/ts-csv/commit/f296579a1a80927db39f92d01bb29624b3167909))
+
+##### Other Changes
+
+*  fixes json with comments issue ([01c7bf8f](https://github.com/gregoranders/ts-csv/commit/01c7bf8f88f2eeb36723da18057d45127ca3d444))
+*  reverts auto fix ([aa634805](https://github.com/gregoranders/ts-csv/commit/aa63480566429ced8f9e6fed72dc7ca3d10d806f))
+*  bumps version ([bb2abec5](https://github.com/gregoranders/ts-csv/commit/bb2abec5252e1ee158b6d31cce7c7888ddfa66c9))
+*  fixes executable bit on hooks ([38b0cf93](https://github.com/gregoranders/ts-csv/commit/38b0cf9328540d3df1647957fffc242a3d9e9a2b))
+*  adds codacy config ([3bb8e06a](https://github.com/gregoranders/ts-csv/commit/3bb8e06ab6467b706042eaaf4d737b98e3494fcf))
+* gregoranders/ts-csv into development ([204e1d00](https://github.com/gregoranders/ts-csv/commit/204e1d005b7aba75628b3481fc51f209fd139b98))
+*  bump eslint-plugin-react-hooks from 4.0.4 to 4.0.5 ([822d7708](https://github.com/gregoranders/ts-csv/commit/822d77088164ee2a28b0fd91025aac8a45430e04))
+*  bump eslint-plugin-react from 7.20.1 to 7.20.3 ([a4bd2925](https://github.com/gregoranders/ts-csv/commit/a4bd2925376dc5809948698fe66a8f61186356d6))
+*  bump @microsoft/api-documenter from 7.8.19 to 7.8.21 ([8ea5e299](https://github.com/gregoranders/ts-csv/commit/8ea5e2992d90adce720cfe38eb12b27fc6053c3b))
+*  bump eslint-plugin-jest from 23.17.1 to 23.18.0 ([958c3147](https://github.com/gregoranders/ts-csv/commit/958c3147ebb5907463bc7b74e4920be477d57aac))
+*  bump @typescript-eslint/eslint-plugin from 3.4.0 to 3.5.0 ([38f461c9](https://github.com/gregoranders/ts-csv/commit/38f461c990fd5a354b4cb7aecdab71b09bfc9859))
+*  bump eslint-plugin-react from 7.20.0 to 7.20.1 ([e772636e](https://github.com/gregoranders/ts-csv/commit/e772636e6c1b6c34235a8c5978ed93c8f5d77ef5))
+*  bump @microsoft/api-documenter from 7.8.17 to 7.8.19 ([e61e2d24](https://github.com/gregoranders/ts-csv/commit/e61e2d241283cd44d3d2b7e152ffb5b6d244beab))
+
+##### Refactors
+
+* **dependencies:**  :arrow_up: removes node 10 support ([995a7d9f](https://github.com/gregoranders/ts-csv/commit/995a7d9f1ca5ed4a9255ecb8e5294dd404acf8e6))
+
 #### 0.0.7 (2020-06-20)
 
 ##### Chores

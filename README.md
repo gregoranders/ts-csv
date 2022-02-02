@@ -1,4 +1,4 @@
-# [<img src="./typescript.svg" />][typescript-url]
+[<img src="./typescript.svg" />][typescript-url]
 
 # @gregoranders/csv
 
@@ -6,7 +6,6 @@
 
 ## [API Docs](./docs/index.md)
 
-[![Dependency Status][daviddm-image]][daviddm-url]
 [![License][license-image]][license-url]
 [![Issues][issues-image]][issues-url]
 [![Code maintainability][code-maintainability-image]][code-maintainability-url] [![Code issues][code-issues-image]][code-issues-url] [![Code Technical Debt][code-tech-debt-image]][code-tech-debt-url]
@@ -42,6 +41,7 @@ import Parser from '@gregoranders/csv';
 const parser = new Parser();
 const rows = parser.parse('a,b,c\n1,2,3\n4,5,6');
 ```
+
 ```ts
 console.log(JSON.stringify(rows, null, 2));
 
@@ -63,6 +63,7 @@ console.log(JSON.stringify(rows, null, 2));
   ]
 ]
 ```
+
 ```ts
 console.log(JSON.stringify(parser.rows, null, 2));
 
@@ -84,6 +85,7 @@ console.log(JSON.stringify(parser.rows, null, 2));
   ]
 ]
 ```
+
 ```ts
 console.log(JSON.stringify(parser.json, null, 2));
 
@@ -103,38 +105,39 @@ console.log(JSON.stringify(parser.json, null, 2));
 
 ### Clone repository
 
-```
+```sh
 git clone https://github.com/gregoranders/ts-csv
 ```
 
 ### Install dependencies
 
-```
+```sh
 npm install
 ```
 
 ### Build
 
-```
+```sh
 npm run build
 ```
 
 ### Testing
 
 #### Test using [Jest][jest-url]
-```
+
+```sh
 npm test
 ```
 
 ### Code Climate Checks [docker required](docs/CODECLIMATE.md)
 
-```
+```sh
 npm run codeclimate
 ```
 
 ### Clear
 
-```
+```sh
 npm run clear
 ```
 
@@ -145,8 +148,6 @@ npm run clear
 [code-metric-url]: https://github.com/gregoranders/ts-csv/search?l=TypeScript
 [travis-url]: https://travis-ci.org/gregoranders/ts-csv
 [travis-image]: https://travis-ci.org/gregoranders/ts-csv.svg?branch=master
-[daviddm-url]: https://david-dm.org/gregoranders/ts-csv
-[daviddm-image]: https://david-dm.org/gregoranders/ts-csv.svg?branch=master
 [license-url]: https://github.com/gregoranders/ts-csv/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/gregoranders/ts-csv.svg
 [master-version-url]: https://github.com/gregoranders/ts-csv/blob/master/package.json

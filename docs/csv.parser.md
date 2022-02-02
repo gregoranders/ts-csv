@@ -20,7 +20,6 @@ import Parser from '@gregoranders/csv';
 
 const parser = new Parser();
 const rows = parser.parse('a,b,c\n1,2,3\n4,5,6');
-
 ```
 
 ## Constructors
