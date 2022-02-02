@@ -44,7 +44,7 @@
     ]
   },
   "jest-html-reporter": {
-    "pageTitle": "nodejs-create-release",
+    "pageTitle": "ts-csv",
     "outputPath": "<rootDir>/test/index.html"
   },
   "jest-junit": {
