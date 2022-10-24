@@ -47,7 +47,7 @@ jobs:
           path-to-lcov: ./test/coverage/lcov.info
       - name: publish code coverage to code climate
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == '16.x'
-        uses: paambaati/codeclimate-action@v3.0.0
+        uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
