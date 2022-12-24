@@ -232,7 +232,7 @@ export class Parser<T = Record<string, string>> {
   private handleQuote() {
     if (this._current === this._options.quote) {
       this._quoteState = { ...this._state };
-      if (this._index && this._previous !== '\\') {
+      if (this._previous !== '\\') {
         this.handleQuoteNotEscaped();
       } else {
         this.handleQuoteEscaped();

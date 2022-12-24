@@ -90,6 +90,13 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
             ['1', '2', ''],
           ],
         },
+        {
+          text: '"a","b","c"\n"1","2",""',
+          expected: [
+            ['a', 'b', 'c'],
+            ['1', '2', ''],
+          ],
+        },
       ].map(({ text, expected }) => {
         it(`${text.replace(/\n/g, '<NL>')} = ${JSON.stringify(
           expected,
