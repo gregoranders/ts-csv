@@ -9,5 +9,5 @@ csv field
 <b>Signature:</b>
 
 ```typescript
-export declare type Field = string;
+export type Field = string;
 ```

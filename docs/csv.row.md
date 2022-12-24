@@ -9,7 +9,7 @@ csv row
 <b>Signature:</b>
 
 ```typescript
-export declare type Row = Array<Field>;
+export type Row = Array<Field>;
 ```
 <b>References:</b> [Field](./csv.field.md)
 

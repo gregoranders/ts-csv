@@ -14,9 +14,9 @@ export interface Configuration
 
 ## Properties
 
-|  Property | Type | Description |
-|  --- | --- | --- |
-|  [fieldSeparator?](./csv.configuration.fieldseparator.md) | string | <i>(Optional)</i> field separator |
-|  [lineSeparator?](./csv.configuration.lineseparator.md) | string | <i>(Optional)</i> line separator |
-|  [quote?](./csv.configuration.quote.md) | string | <i>(Optional)</i> quote character |
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [fieldSeparator?](./csv.configuration.fieldseparator.md) |  | string | <i>(Optional)</i> field separator |
+|  [lineSeparator?](./csv.configuration.lineseparator.md) |  | string | <i>(Optional)</i> line separator |
+|  [quote?](./csv.configuration.quote.md) |  | string | <i>(Optional)</i> quote character |
 
