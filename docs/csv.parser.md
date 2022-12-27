@@ -32,8 +32,8 @@ const rows = parser.parse('a,b,c\n1,2,3\n4,5,6');
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [json](./csv.parser.json.md) |  | readonly T\[\] | returns rows as JSON using the first row as property name provider |
-|  [rows](./csv.parser.rows.md) |  | readonly [Row](./csv.row.md)<!-- -->\[\] | returns rows |
+|  [json](./csv.parser.json.md) | <code>readonly</code> | readonly T\[\] | returns rows as JSON using the first row as property name provider |
+|  [rows](./csv.parser.rows.md) | <code>readonly</code> | readonly [Row](./csv.row.md)<!-- -->\[\] | returns rows |
 
 ## Methods
 

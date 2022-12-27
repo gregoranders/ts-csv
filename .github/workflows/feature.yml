@@ -22,9 +22,9 @@ jobs:
         node-version: [12.x, 16.x, 17.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.2.0
       - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: nodejs project information
@@ -47,7 +47,7 @@ jobs:
           path-to-lcov: ./test/coverage/lcov.info
       - name: publish code coverage to code climate
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == '16.x'
-        uses: paambaati/codeclimate-action@v3.0.0
+        uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
@@ -61,7 +61,7 @@ jobs:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: ./test/coverage/lcov.info
       - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
         with:
           check_name: Unit Test Results node${{ matrix.node-version }}-${{ matrix.os }}
           files: test/junit.xml

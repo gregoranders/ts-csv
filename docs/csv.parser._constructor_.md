@@ -16,5 +16,5 @@ constructor(configuration?: Configuration);
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  configuration | [Configuration](./csv.configuration.md) | optional configuration |
+|  configuration | [Configuration](./csv.configuration.md) | <i>(Optional)</i> optional configuration |
 

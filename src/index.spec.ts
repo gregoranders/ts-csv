@@ -18,7 +18,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
     });
 
     it('libversion', () => {
-      expect(TestSubject.libversion).toBe('0.0.9');
+      expect(TestSubject.libversion).toBe('0.0.10');
     });
 
     it('liburl', () => {
@@ -85,6 +85,13 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
         },
         {
           text: 'a,b,c\n1,2,',
+          expected: [
+            ['a', 'b', 'c'],
+            ['1', '2', ''],
+          ],
+        },
+        {
+          text: '"a","b","c"\n"1","2",""',
           expected: [
             ['a', 'b', 'c'],
             ['1', '2', ''],

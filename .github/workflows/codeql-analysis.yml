@@ -1,9 +1,9 @@
-name: "CodeQL"
+name: 'CodeQL'
 on:
   push:
-    branches: [ main, development, feature/* ]
+    branches: [main, development, feature/*]
   pull_request:
-    branches: [ main, development, feature/* ]
+    branches: [main, development, feature/*]
   schedule:
     - cron: '43 7 * * 0'
 jobs:
@@ -16,21 +16,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]
+        language: ['javascript']
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.2.0
         with:
           submodules: recursive
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
       - name: Echo Node.js version
         run: node --version
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
+        uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v1
+        uses: github/codeql-action/autobuild@v2
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+        uses: github/codeql-action/analyze@v2
