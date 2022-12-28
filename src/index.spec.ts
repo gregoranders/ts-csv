@@ -132,7 +132,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           expected[1]
         })`, () => {
           const parser = new TestSubject.Parser();
-          expect(() => parser.parse(text)).toThrowError(
+          expect(() => parser.parse(text)).toThrow(
             `Invalid CSV at ${expected[0]}:${expected[1]}`,
           );
         });
@@ -196,7 +196,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           expected[1]
         })`, () => {
           const parser = new TestSubject.Parser({ fieldSeparator: ';' });
-          expect(() => parser.parse(text)).toThrowError(
+          expect(() => parser.parse(text)).toThrow(
             `Invalid CSV at ${expected[0]}:${expected[1]}`,
           );
         });
