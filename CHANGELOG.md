@@ -1,3 +1,9 @@
+#### 0.0.12 (2022-12-28)
+
+##### Bug Fixes
+
+*  use correct version number ([9ee980ee](https://github.com/gregoranders/ts-csv/commit/9ee980eee66a3791c09c8bc634ae7c34f6f3c622))
+
 #### 0.0.11 (2022-12-28)
 
 ##### Build System / Dependencies
