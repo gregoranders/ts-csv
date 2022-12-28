@@ -18,7 +18,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
     });
 
     it('libversion', () => {
-      expect(TestSubject.libversion).toBe('0.0.10');
+      expect(TestSubject.libversion).toBe('0.0.12');
     });
 
     it('liburl', () => {
