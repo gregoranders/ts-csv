@@ -97,7 +97,7 @@
   },
   "homepage": "https://gregoranders.github.io/ts-csv/",
   "devDependencies": {
-    "@commitlint/cli": "17.3.0",
+    "@commitlint/cli": "17.5.1",
     "@commitlint/config-conventional": "17.3.0",
     "@microsoft/api-documenter": "7.19.27",
     "@microsoft/api-extractor": "7.33.7",
