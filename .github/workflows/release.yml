@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.5.2
       - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org/'
@@ -45,7 +45,7 @@ jobs:
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - uses: actions/setup-node@v3.6.0
+      - uses: actions/setup-node@v3.7.0
         with:
           registry-url: 'https://npm.pkg.github.com'
       - run: npm publish
