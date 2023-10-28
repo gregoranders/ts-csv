@@ -6,7 +6,7 @@
 
 library version
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 libversion = "0.0.13"

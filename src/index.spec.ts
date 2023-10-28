@@ -98,7 +98,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           ],
         },
       ].map(({ text, expected }) => {
-        it(`${text.replace(/\n/g, '<NL>')} = ${JSON.stringify(
+        it(`${text.replaceAll('\n', '<NL>')} = ${JSON.stringify(
           expected,
         )}`, () => {
           const parser = new TestSubject.Parser();
@@ -128,7 +128,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           expected: [0, 2],
         },
       ].map(({ text, expected }) => {
-        it(`${text.replace(/\n/g, '<NL>')} => ParseError(${expected[0]}, ${
+        it(`${text.replaceAll('\n', '<NL>')} => ParseError(${expected[0]}, ${
           expected[1]
         })`, () => {
           const parser = new TestSubject.Parser();
@@ -166,7 +166,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           ],
         },
       ].map(({ text, expected }) => {
-        it(`${text.replace(/\n/g, '<NL>')} = ${JSON.stringify(
+        it(`${text.replaceAll('\n', '<NL>')} = ${JSON.stringify(
           expected,
         )}`, () => {
           const parser = new TestSubject.Parser({
@@ -192,7 +192,7 @@ describe(`${TestSubject.libname} ${TestSubject.libversion} - csv`, () => {
           expected: [0, 5],
         },
       ].map(({ text, expected }) => {
-        it(`${text.replace(/\n/g, '<NL>')} => ParseError(${expected[0]}, ${
+        it(`${text.replaceAll('\n', '<NL>')} => ParseError(${expected[0]}, ${
           expected[1]
         })`, () => {
           const parser = new TestSubject.Parser({ fieldSeparator: ';' });

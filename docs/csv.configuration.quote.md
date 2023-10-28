@@ -6,7 +6,7 @@
 
 quote character
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 quote?: string;

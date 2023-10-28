@@ -6,7 +6,7 @@
 
 csv field
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export type Field = string;

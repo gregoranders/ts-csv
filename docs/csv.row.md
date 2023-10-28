@@ -6,10 +6,10 @@
 
 csv row
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export type Row = Array<Field>;
 ```
-<b>References:</b> [Field](./csv.field.md)
+**References:** [Field](./csv.field.md)
 

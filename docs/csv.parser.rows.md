@@ -6,7 +6,7 @@
 
 returns rows
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 /** @virtual */

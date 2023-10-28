@@ -6,7 +6,7 @@
 
 field separator
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 fieldSeparator?: string;
