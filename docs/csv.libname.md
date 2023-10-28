@@ -6,7 +6,7 @@
 
 library name
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 libname = "@gregoranders/csv"

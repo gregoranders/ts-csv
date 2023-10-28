@@ -6,7 +6,7 @@
 
 line separator
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 lineSeparator?: string;

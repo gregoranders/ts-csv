@@ -6,7 +6,7 @@
 
 constructor
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 constructor(configuration?: Configuration);
@@ -16,5 +16,5 @@ constructor(configuration?: Configuration);
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  configuration | [Configuration](./csv.configuration.md) | <i>(Optional)</i> optional configuration |
+|  configuration | [Configuration](./csv.configuration.md) | _(Optional)_ optional configuration |
 

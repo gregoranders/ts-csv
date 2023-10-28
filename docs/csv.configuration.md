@@ -6,7 +6,7 @@
 
 parser configuration
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface Configuration 
@@ -16,7 +16,7 @@ export interface Configuration
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [fieldSeparator?](./csv.configuration.fieldseparator.md) |  | string | <i>(Optional)</i> field separator |
-|  [lineSeparator?](./csv.configuration.lineseparator.md) |  | string | <i>(Optional)</i> line separator |
-|  [quote?](./csv.configuration.quote.md) |  | string | <i>(Optional)</i> quote character |
+|  [fieldSeparator?](./csv.configuration.fieldseparator.md) |  | string | _(Optional)_ field separator |
+|  [lineSeparator?](./csv.configuration.lineseparator.md) |  | string | _(Optional)_ line separator |
+|  [quote?](./csv.configuration.quote.md) |  | string | _(Optional)_ quote character |
 

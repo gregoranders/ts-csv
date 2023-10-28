@@ -6,7 +6,7 @@
 
 parse csv
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 parse(text: string): readonly Row[];
@@ -18,7 +18,7 @@ parse(text: string): readonly Row[];
 |  --- | --- | --- |
 |  text | string | CSV text |
 
-<b>Returns:</b>
+**Returns:**
 
 readonly [Row](./csv.row.md)<!-- -->\[\]
 

@@ -6,7 +6,7 @@
 
 library homepage
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 liburl = "https://gregoranders.github.io/ts-csv/"
